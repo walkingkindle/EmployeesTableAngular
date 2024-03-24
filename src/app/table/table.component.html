@@ -1,0 +1,15 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Employee Name</th>
+      <th scope="col">Total Time worked</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="this.employees.length > 0">
+  <tr *ngFor="let Employee of this.totalHoursMap | keyvalue">
+    <td>{{Employee.key}}</td>
+    <td [class.highlight]="Employee.value < 100">{{formatHours(Employee.value)}}</td>
+  </tr>
+  </tbody>
+</table>
+
